@@ -1,0 +1,19 @@
+.title-container {
+  border-bottom: 2px solid #e9ecef;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Light gradient */
+}
+
+.title-a {
+  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth effects */
+  cursor: pointer;
+}
+
+.title-a:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.title-b {
+  font-style: italic;
+  opacity: 0.8;
+}

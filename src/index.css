@@ -1,65 +1,246 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+/*keep*/
 body {
+  font-family: "Poppins", sans-serif;
   margin: 0;
-  background: linear-gradient(180deg, rgb(117, 81, 194), rgb(255, 255, 255));
-  display: flex;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+.pclooksMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: white;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h1 {
+  font-size: 36px;
 }
 
-ul {
-  padding-inline-start: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  margin: 8px 0;
-  border: 1px solid black;
-  gap: 1px;
-  background-color: black;
-  border-radius: 8px;
-  overflow: auto;
+p {
+  font-size: 18px;
 }
 
-li {
-  background-color: white;
-  padding: 8px;
+/* Custom focus style */
+
+.contactinfo-a:focus,
+.title-a:focus,
+.prev:focus,
+.next:focus{
+  outline: none;
+  box-shadow: 0px 0px 10px rgb(0, 123, 255);
+  /* Custom focus shadow */
 }
 
-li:hover {
-  background: #dadbf9;
-}
+/* Basic button style */
 
-a {
-  font-weight: 800;
+.contactinfo-a,
+.prev,
+.next {
+  padding: 10px 20px;
+  border-radius: 5px;
   text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  /* Smooth transition */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  /* Adding shadow */
 }
+
+/* Hover effect */
+
+.contactinfo-a:hover,
+.title-a:hover,
+.prev:hover,
+.next:hover {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+  /* Reduced shadow on hover */
+  transform: translateY(-2px);
+  /* Slight movement upwards */
+}
+
+/* Click effect */
+
+.contactinfo-a:active,
+.title-a:active,
+.prev:active,
+.next:active {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  /* Less shadow when clicked */
+  transform: translateY(2px);
+  /* Move the button down slightly */
+}
+
+
+
+
+
+a:link {
+  text-decoration: none !important;
+}
+
+
+
+
+/*pc*/
+@media screen and (min-width: 900px) {
+   .pclooksMain {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .pclooks2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pclooks {
+    width: 41%;
+  }
+
+  .timeMain {
+    padding-top: 23px;
+  }
+
+  .times {
+    max-width: 1000px; /* Expand container */
+    padding: 40px; /* Increase padding */
+    border-radius: 10px; /* Larger border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  }
+
+  .title-a {
+    font-size: 5vw;
+  }
+
+  .photos {
+    width: 97%;
+    padding-top: 51px;
+    margin-left: 22px;
+  }
+
+  .contactinfoMain {
+    margin-bottom: 120px;
+  }
+
+  .contactinfo {
+    padding: 30px;
+    /* Increased padding */
+    border-radius: 10px;
+    /* Larger border radius */
+    max-width: 600px;
+    /* Increase the max width */
+    background-color: #f9f9f9;
+  }
+
+  .contactinfo-a {
+    font-size: 20px;
+    /* Larger font size */
+  }
+
+  .contactinfo-a,
+  .contactinfo-a i,
+  .contactinfo-a:first-child::before,
+  .contactinfo-a:nth-child(2)::before,
+  .contactinfo-a:nth-child(3)::before {
+    margin-right: 15px;
+    /* More space between icon and text */
+  }
+
+  .card-header {
+    padding-bottom: 15px; /* More padding */
+    margin-bottom: 15px; /* Increased margin */
+  }
+
+  .OpeningT {
+    font-size: 28px; /* Increase title font size */
+  }
+
+  i.far {
+    font-size: 50px; /* Larger icon */
+  }
+
+  /* Table Styles */
+  table.openinghours {
+    border-spacing: 0 10px; /* Increased spacing between rows */
+  }
+
+  table.openinghours th:not(.current-day-day, .open-now),
+  table.openinghours td:not(.current-day-day, .open-now) {
+    padding: 15px 20px; /* Larger padding */
+    border-radius: 8px; /* Larger radius for table cells */
+  }
+
+  table.openinghours th,
+  table.openinghours td {
+    padding: 18px 25px; /* Larger table cell padding */
+    font-size: 20px; /* Increase table font size */
+  }
+}
+
+/*tablet*/
+@media screen and (min-width: 601px) and (max-width: 899px) {
+  .pclooks {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+  }
+
+  .photos{
+    padding-top: 25px;
+  }
+
+  .maps{
+    margin-top: 50px;
+  }
+
+  .contactinfo {
+    background-color: #f9f9f9;
+  }
+
+  .title-a {
+    font-size: 5vw;
+  }
+}
+
+
+/*phone*/
+@media screen and (max-width: 600px) {
+  .times {
+    max-width: 83%;
+    margin: 20px auto;
+  }
+ .timeMain {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e9ecef;
+    order: 2;
+  }
+  .title-a {
+    font-size: 11vw;
+  }
+
+  .contactinfo {
+    border-bottom: 1px solid #e9ecef;
+    background-color: #f9f9f9;
+  }
+
+  .maps {
+    border-bottom: 1px solid #e9ecef;
+    order: 1;
+  }
+
+  .pclooksMain{
+    grid-template-columns: 1fr; /* One column layout */
+  }
+}
+
+
+
+
+
+
+
